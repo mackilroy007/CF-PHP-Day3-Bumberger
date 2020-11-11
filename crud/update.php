@@ -52,17 +52,17 @@ if ($_GET['id']) {
                <td><input type="text"  name="img" placeholder ="Add image URL" value="<?php echo $data['img'] ?>"  /></td>
            </tr >     
            <tr>
-               <th>Ingridients</th>
-               <td><input type= "text" name="ingridients"  placeholder="Add ingridients" value ="<?php echo $data['ingridients'] ?>" /></td >
+               <th>Ingredients</th>
+               <td><input type= "text" name="ingredients"  placeholder="Add ingredients" value ="<?php echo $data['ingredients'] ?>" /></td >
            </tr>
            <tr>
                <th >Allergies</th>
-               < td><input type ="text" name= "allergies" placeholder= "Add allergies" value= "<?php echo $data['allergies'] ?>" /></td>
+               <td><input type ="text" name= "allergies" placeholder= "Add allergies" value= "<?php echo $data['allergies'] ?>"/></td>
            </tr>
            <tr>
                <input type= "hidden" name= "id" value= "<?php echo $data['id']?>" />
                <td><button  type= "submit">Save Changes</button ></td>
-               <td><a  href= "index.php">< button  type="button" >Back</button ></a ></td >
+               <td><a  href= "index.php"><button  type="button">Back</button ></a ></td >
            </tr>
        </table>
    </form >

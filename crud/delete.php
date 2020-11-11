@@ -24,7 +24,7 @@ if ($_GET['id']) {
 
    <input type="hidden" name= "id" value="<?php echo $data['id'] ?>" />
    <button type="submit">Yes, delete it!</button >
-   <a href="index.php">< button type="button">No, go back!</button ></a>
+   <a href="index.php"><button type="button">No, go back!</button ></a>
 </form>
 
 </body>

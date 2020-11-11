@@ -1,3 +1,6 @@
+<?php
+include "actions/db_connect.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +16,7 @@
        table tr th  {
            padding-top: 20px;
        }
-   </ style>
+   </style>
 
 </head>
 <body>
@@ -32,16 +35,16 @@
                <td><input  type="number" name= "price" placeholder="Insert price" /></td>
            </tr>
            <tr>
-               <th>Meal Img</ th>
-               <td>< input type="text"  name="img" placeholder ="Insert img url" /></td>
+               <th>Meal Img</th>
+               <td><input type="text"  name="img" placeholder ="Insert img url"/></td>
            </tr>
            <tr>
                <th>Ingredients</ th>
-               <td>< input type="text"  name="ingridients" placeholder ="Insert ingridients" /></td>
+               <td><input type="text"  name="ingredients" placeholder ="Insert ingredients"/></td>
            </tr>
            <tr>
                <th>Allergies</ th>
-               <td>< input type="text"  name="allergies" placeholder ="Insert allergies" /></td>
+               <td><input type="text"  name="allergies" placeholder ="Insert allergies"/></td>
            </tr>
            <tr>
                <td><button type ="submit">Insert user</button></td>

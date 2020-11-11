@@ -6,10 +6,10 @@ if ($_POST) {
    $meal = $_POST['meal'];
    $price = $_POST['price'];
    $img = $_POST[ 'img'];
-   $ingridients = $_POST[ 'ingridients'];
+   $ingredients = $_POST[ 'ingredients'];
    $allergies = $_POST[ 'allergies'];
 
-   $sql = "INSERT INTO meal (m_name, price, img, ingridients, allergies) VALUES ('$meal', '$price', '$img', '$ingridients', '$allergies')";
+   $sql = "INSERT INTO meal (m_name, price, img, ingredients, allergies) VALUES ('$meal', '$price', '$img', '$ingredients', '$allergies')";
     if($connect->query($sql) === TRUE) {
        echo "<p>New Record Successfully Created</p>" ;
        echo "<a href='../create.php'><button type='button'>Back</button></a>";

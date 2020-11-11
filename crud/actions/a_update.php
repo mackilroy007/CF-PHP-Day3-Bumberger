@@ -6,12 +6,12 @@ if ($_POST) {
    $meal = $_POST['meal'];
    $price = $_POST['price'];
    $img = $_POST[ 'img'];
-   $ingridients = $_POST[ 'ingridients'];
+   $ingredients = $_POST[ 'ingredients'];
    $allergies = $_POST[ 'allergies'];
 
    $id = $_POST['id'];
 
-   $sql = "UPDATE meal SET m_name = '$meal', price = '$price', img = '$img', ingridients = '$ingridients', allergies = '$allergies' WHERE id = {$id}" ;
+   $sql = "UPDATE meal SET m_name = '$meal', price = '$price', img = '$img', ingredients = '$ingredients', allergies = '$allergies' WHERE id = {$id}" ;
    if($connect->query($sql) === TRUE) {
        echo  "<p>Successfully Updated</p>";
        echo "<a href='../update.php?id=" .$id."'><button type='button'>Back</button></a>";

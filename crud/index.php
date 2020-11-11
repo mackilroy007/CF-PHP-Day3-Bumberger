@@ -15,7 +15,9 @@
            width: 100%;
             margin-top: 20px;
        }
-
+       img{
+           height: 20em;
+       }
    </style>
 
 </head>
@@ -33,22 +35,29 @@
                <th >Allergies</th>
            </tr>
        </thead>
+       
        <tbody>
        <?php
-           $sql = "SELECT * FROM meal WHERE active = 0";
+           $sql = "SELECT * FROM meal";
            $result = $connect->query($sql);
+        // $result = mysqli_query($connect, $sql);
 
+        
             if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                    echo  "<tr>
-                       <td>" .$row['m_name']." ".$row['price' ]."</td>
-                       <td>" .$row['price']."</td>.<td>" .$row['img']
-                       ."</td>.<td>" .$row['allergies']."</td>.<td>" .$row['ingridients']."</td>
-                       <td>
-                           <a href='update.php?id=" .$row['id']."'><button type='button'>Edit</button></a>
-                           <a href='delete.php?id=" .$row['id']."'><button type='button'>Delete</button></a>
-                       </td>
-                   </tr>" ;
+                                <td>" 
+                                    .$row['m_name']."</td> 
+                                    <td>".$row['price']."</td> 
+                                    <td> <img src='".$row['img']. "' alt='test'>" ."</td> 
+                                    <td>" .$row['allergies']."</td> 
+                                    <td>" .$row['ingredients']."</td>
+                                </td>
+                                <td>
+                                    <a href='update.php?id=" .$row['id']."'><button type='button'>Edit</button></a>
+                                    <a href='delete.php?id=" .$row['id']."'><button type='button'>Delete</button></a>
+                                </td>
+                            </tr>" ;
                }
            } else  {
                echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
@@ -60,3 +69,4 @@
 
 </body>
 </html>
+
