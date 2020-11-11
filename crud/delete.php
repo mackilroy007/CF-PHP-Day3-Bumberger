@@ -29,6 +29,12 @@ if ($_GET['id']) {
    <title >Delete Meal</title>
 </head>
 <body>
+   
+<nav class="navbar sticky-top fixed navbar-light bg-light">
+  <form class="form-inline">
+    <a class="navbar-brand" href="index.php">Home</a>
+  </form>
+</nav>
 
 <div class="container text-center">
 <h2 class="m-4">Do you really want to delete this meal?</h2>

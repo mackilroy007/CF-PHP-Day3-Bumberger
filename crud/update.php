@@ -40,6 +40,11 @@ if ($_GET['id']) {
 
 </head>
 <body>
+<nav class="navbar sticky-top fixed navbar-light bg-light">
+  <form class="form-inline">
+    <a class="navbar-brand" href="index.php">Home</a>
+  </form>
+</nav>
 
 <div class="container mt-5">
     <h2 class="text-center m-4">Add a Meal</h2>
