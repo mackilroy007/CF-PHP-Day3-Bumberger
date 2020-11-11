@@ -41,7 +41,7 @@ if ($_GET['id']) {
        <table  cellspacing="0" cellpadding= "0">
            <tr>
                <th>Meal</th>
-               <td><input type="text"  name="meal" placeholder ="Add meal" value="<?php echo $data['m_name'] ?>"  /></td>
+               <td><input type="text"  name="meal" placeholder ="Add meal" value="<?php echo $data['meal'] ?>"  /></td>
            </tr >
            <tr>
                <th>price</th>
