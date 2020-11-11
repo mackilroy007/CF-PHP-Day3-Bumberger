@@ -32,9 +32,9 @@ if ($_POST) {
                 <h2 class='text-center m-4'>Successfully deleted!</h2>
                 <a href='../index.php'><button class='btn btn-dark' type='button'>Home</button></a>
             </div>
-    ";
+        ";
    } else {
-       echo "Error updating record : " . $connect->error;
+       echo "<p class='text-center mt-5'>Error updating record : </p>" . $connect->error;
    }
 
    $connect->close();

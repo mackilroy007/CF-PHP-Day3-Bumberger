@@ -36,9 +36,9 @@ if ($_POST) {
                 <a href='../index.php'><button class='btn btn-dark' type='button'>Home</button></a>
                 <a href='../create.php'><button class='btn btn-dark' type='button'>Back</button></a>
             </div>
-    ";
+        ";
    } else  {
-       echo "Error " . $sql . ' ' . $connect->connect_error;
+       echo "<p class='text-center mt-5'>Error " . $sql . ' ' . $connect->connect_error .'</p>;
    }
 
    $connect->close();
