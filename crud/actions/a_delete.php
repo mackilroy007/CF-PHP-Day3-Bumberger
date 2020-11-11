@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Action</title>
-    
+
 </head>
 <body>
 <?php 
@@ -56,5 +56,3 @@ if ($_POST) {
     crossorigin="anonymous"></script>
 </body>
 </html>
-
-
