@@ -8,7 +8,6 @@ if (isset($_SESSION['user']) != "") {
 include_once 'crud/actions/db_connect.php';
 $error = false;
 if (isset($_POST['btn-signup'])) {
-
    // sanitize user input to prevent sql injection
    $name = trim($_POST['name']);
 
@@ -117,22 +116,22 @@ if (isset($_POST['btn-signup'])) {
 </head>
 
 <body>
+   <!-- navbar -->
+   <nav class="navbar sticky-top fixed navbar-dark bg-dark">
+      <form class="form-inline">
+         <a class="navbar-brand" href="index.php">Home</a>
+      </form>
+   </nav>
+
+   <!-- header -->
+   <header>
+      <h1 class="text-center mt-5 m-4">Sign Up Now!</h1>
+   </header>
+
    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
-
-      <!-- navbar -->
-      <nav class="navbar sticky-top fixed navbar-dark bg-dark">
-         <form class="form-inline">
-            <a class="navbar-brand" href="index.php">Home</a>
-         </form>
-      </nav>
       <main class="container">
-         <!-- header -->
-         <header>
-            <h1 class="text-center mt-5 m-4">Sign Up Now!</h1>
-         </header>
          <hr />
-
          <?php
          if (isset($errMSG)) {
 
