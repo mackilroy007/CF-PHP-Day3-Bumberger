@@ -57,7 +57,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <a href="create.php"><button class="btn btn-warning" type="button">Add Meal</button></a>
     </form>  
         <form class="form-inline">
-            <a class="navbar-brand" href="#">Welcome - <?php echo $userRow['userEmail']; ?></a>
+            <a class="navbar-brand" href="#">Welcome - <?php echo $userRow['userName']; ?></a>
             <a href="../logout.php?logout"><button class="btn btn-outline-primary" type="button">Sign Out</button></a>
         </form>
     </nav>
@@ -81,7 +81,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
                                     <img src='" . $row['img'] . "' class='card-img-top' alt='" . $row['m_name'] . "'>
                                     <div class='card-body'>
                                         <h5 class='card-title'>" . $row['m_name'] . "</h5>
-                                        <p class='card-text'>Ingredients: " . $row['ingredients'] . "</small></p>
+                                        <p class='card-text'>Price: " . $row['price'] . "$</p>
+                                        <p class='card-text'>Ingredients: " . $row['ingredients'] . "</p>
                                         <p class='card-text'>Allergies: " . $row['allergies'] . "</p>
                                         <a href='update.php?id=" . $row['id'] . "'><button class='btn btn-outline-primary' type='button'>Edit</button></a>
                                         <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-outline-danger' type='button'>Delete</button></a>

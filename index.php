@@ -53,7 +53,7 @@ if (isset($_POST['btn-login'])) {
       header("Location: crud/home.php");
       #change
     } else {
-      $errMSG = "Incorrect Credentials, Try again...";
+      $errMSG = "<h4 class='text-center'>Incorrect Credentials, Try again</h4>";
     }
   }
 }
