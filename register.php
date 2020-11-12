@@ -99,56 +99,77 @@ if (isset($_POST['btn-signup'])) {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Login & Registration System</title>
+   <style>
+      hr {
+         display: block;
+         height: 1px;
+         border: 0;
+         border-top: 1px solid darkgray;
+         margin: 1em 0;
+         padding: 0;
+      }
+   </style>
 </head>
 
 <body>
    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
 
-      <h2>Sign Up.</h2>
-      <hr />
+      <!-- navbar -->
+      <nav class="navbar sticky-top fixed navbar-light bg-light">
+         <form class="form-inline">
+            <a class="navbar-brand" href="index.php">Home</a>
+         </form>
+      </nav>
+      <main class="container">
+         <!-- header -->
+         <header>
+            <h1 class="text-center mt-5 m-4">Sign Up.</h1>
+         </header>
+         <hr />
 
-      <?php
-      if (isset($errMSG)) {
+         <?php
+         if (isset($errMSG)) {
 
-      ?>
-         <div class="alert alert-<?php echo $errTyp ?>">
-            <?php echo  $errMSG; ?>
-         </div>
+         ?>
+            <div class="alert alert-<?php echo $errTyp ?>">
+               <?php echo  $errMSG; ?>
+            </div>
 
-      <?php
-      }
-      ?>
+         <?php
+         }
+         ?>
 
+         <form class="d-flex justify-content-center flex-column ">
 
+            <div class="form-group justify-content-center">
+               <label for="name">Name:</label>
+               <input type="text" name="name" class="form-control" placeholder="Enter your name" maxlength="50" value="<?php echo $name ?>" />
 
+               <span class="text-danger"> <?php echo  $nameError; ?> </span>
+            </div>
+            <br>
+            <div class="form-group">
+               <label for="email">Email:</label>
+               <input type="email" name="email" class="form-control" placeholder="Enter your email" maxlength="40" value="<?php echo $email ?>" />
 
-      <input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
+               <span class="text-danger"> <?php echo  $emailError; ?> </span>
+            </div>
 
-      <span class="text-danger"> <?php echo  $nameError; ?> </span>
+            <div class="form-group">
+               <label for="password">Password:</label>
+               <input type="password" name="pass" class="form-control" placeholder="Enter your password" maxlength="25" />
 
+               <span class="text-danger"> <?php echo  $passError; ?> </span>
+            </div>
+            <hr />
 
+            <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
+         </form>
+         <hr />
 
-      <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
-
-      <span class="text-danger"> <?php echo  $emailError; ?> </span>
-
-
-
-
-
-      <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="25" />
-
-      <span class="text-danger"> <?php echo  $passError; ?> </span>
-
-      <hr />
-
-
-      <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
-      <hr />
-
-      <a href="index.php">Sign in Here...</a>
-
+         <a href="index.php"> <button class="btn btn-dark" type="button">Sign in Here</button></a>
+      </main>
 
    </form>
    <!-- Optional JavaScript -->
