@@ -32,7 +32,7 @@ if ($_GET['id']) {
    
 <nav class="navbar sticky-top fixed navbar-light bg-light">
   <form class="form-inline">
-    <a class="navbar-brand" href="index.php">Home</a>
+    <a class="navbar-brand" href="home.php">Home</a>
   </form>
 </nav>
 
@@ -42,7 +42,7 @@ if ($_GET['id']) {
 <form action ="actions/a_delete.php" method="post">
    <input type="hidden" name= "id" value="<?php echo $data['id'] ?>" />
    <button class="btn btn-danger" type="submit">Yes, delete it!</button >
-   <a href="index.php"><button class="btn btn-dark" type="button">No, go back!</button></a>
+   <a href="home.php"><button class="btn btn-dark" type="button">No, go back!</button></a>
 </form>
 </div>
 

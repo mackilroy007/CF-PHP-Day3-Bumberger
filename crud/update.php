@@ -42,7 +42,7 @@ if ($_GET['id']) {
 <body>
 <nav class="navbar sticky-top fixed navbar-light bg-light">
   <form class="form-inline">
-    <a class="navbar-brand" href="index.php">Home</a>
+    <a class="navbar-brand" href="home.php">Home</a>
   </form>
 </nav>
 
@@ -76,7 +76,7 @@ if ($_GET['id']) {
             <!-- button to submit content -->
             <button class="btn btn-success" type= "submit">Save Changes</button >
             <!-- button to go back -->
-            <a href= "index.php"><button class="btn btn-dark" type="button">Back</button></a>
+            <a href= "home.php"><button class="btn btn-dark" type="button">Back</button></a>
 
         </form>
 </div>

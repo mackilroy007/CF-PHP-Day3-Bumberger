@@ -30,7 +30,7 @@ if ($_POST) {
     echo"
             <div class='container text-center mt-5'>
                 <h2 class='text-center m-4'>Successfully deleted!</h2>
-                <a href='../index.php'><button class='btn btn-dark' type='button'>Home</button></a>
+                <a href='../home.php'><button class='btn btn-dark' type='button'>Home</button></a>
             </div>
         ";
    } else {

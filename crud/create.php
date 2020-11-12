@@ -9,7 +9,7 @@ include "actions/db_connect.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
    <title>PHP CRUD  |  Add Meal</title>
 
@@ -29,7 +29,7 @@ include "actions/db_connect.php";
 <body>
 <nav class="navbar sticky-top fixed navbar-light bg-light">
   <form class="form-inline">
-    <a class="navbar-brand" href="index.php">Home</a>
+    <a class="navbar-brand" href="home.php">Home</a>
   </form>
 </nav>
 
@@ -60,7 +60,7 @@ include "actions/db_connect.php";
             <!-- button to submit content -->
             <button class="btn btn-success" type ="submit">Insert user</button> 
             <!-- button to go back -->
-            <a href= "index.php"><button class="btn btn-dark" type="button">Back</button></a>
+            <a href= "home.php"><button class="btn btn-dark" type="button">Back</button></a>
 
         </form>
 </div>
