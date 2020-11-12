@@ -52,11 +52,13 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 <body>
 
     <nav class="navbar sticky-top fixed navbar-light bg-light">
+    <form class="form-inline">
+        <a class="navbar-brand" href="home.php">Home</a>
+        <a href="create.php"><button class="btn btn-warning" type="button">Add Meal</button></a>
+    </form>  
         <form class="form-inline">
-            <a class="navbar-brand" href="home.php">Home</a>
-            <a href="create.php"><button class="btn btn-warning" type="button">Add Meal</button></a>
             <a class="navbar-brand" href="#">Welcome - <?php echo $userRow['userEmail']; ?></a>
-            <a href="../logout.php?logout"><button class="btn btn-primary" type="button">Sign Out</button></a>
+            <a href="../logout.php?logout"><button class="btn btn-outline-primary" type="button">Sign Out</button></a>
         </form>
     </nav>
 
@@ -81,8 +83,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
                                         <h5 class='card-title'>" . $row['m_name'] . "</h5>
                                         <p class='card-text'>Ingredients: " . $row['ingredients'] . "</small></p>
                                         <p class='card-text'>Allergies: " . $row['allergies'] . "</p>
-                                        <a href='update.php?id=" . $row['id'] . "'><button class='btn btn-primary' type='button'>Edit</button></a>
-                                        <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger' type='button'>Delete</button></a>
+                                        <a href='update.php?id=" . $row['id'] . "'><button class='btn btn-outline-primary' type='button'>Edit</button></a>
+                                        <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-outline-danger' type='button'>Delete</button></a>
                                     </div>
                                 </div>
                             </article>";

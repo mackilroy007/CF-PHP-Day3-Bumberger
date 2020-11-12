@@ -72,40 +72,66 @@ if (isset($_POST['btn-login'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login & Registration System</title>
+  <style>
+    body {
+      background: rgb(250, 237, 230);
+      background: linear-gradient(90deg, rgba(250, 237, 230, 1) 0%, rgba(210, 192, 195, 1) 52%, rgba(89, 81, 87, 1) 100%);
+    }
+
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid black;
+      margin: 1em 0;
+      padding: 0;
+    }
+  </style>
 </head>
 
 <body>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-
-
-    <h2>Sign In.</h2>
+  <!-- navbar -->
+  <nav class="navbar sticky-top fixed navbar-dark bg-dark">
+    <form class="form-inline">
+      <a class="navbar-brand" href="index.php">Home</a>
+    </form>
+  </nav>
+  <main class="container">
+    <!-- header -->
+    <header class="text-center mt-5 m-4">
+      <h1>Welcome!</h1>
+    </header>
     <hr />
+    <!-- form -->
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+      <?php
+      if (isset($errMSG)) {
+        echo  $errMSG; ?>
 
-    <?php
-    if (isset($errMSG)) {
-      echo  $errMSG; ?>
+      <?php
+      }
+      ?>
+      <div class="form-group">
+        <label for="email"><b>Email:</b></label>
+        <input type="email" name="email" class="form-control" placeholder="Enter your email" value="<?php echo $email; ?>" maxlength="40" />
+        <span class="text-danger"><?php echo $emailError; ?></span>
+      </div>
 
-    <?php
-    }
-    ?>
-    <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
-
-    <span class="text-danger"><?php echo $emailError; ?></span>
-
-
-    <input type="password" name="pass" class="form-control" placeholder="Your Password" maxlength="25" />
-
-    <span class="text-danger"><?php echo $passError; ?></span>
-    <hr />
-    <button type="submit" name="btn-login">Sign In</button>
+      <div class="form-group"></div>
+      <label for="pass"><b>Password:</b></label>
+      <input type="password" name="pass" class="form-control" placeholder="Enter your password" maxlength="25" />
+      <span class="text-danger"><?php echo $passError; ?></span>
+      </div>
+      <hr />
+      <button class="btn btn-success btn-block" type="submit" name="btn-login"><b>Sign In</b></button>
 
 
-    <hr />
+      <hr />
 
-    <a href="register.php">Sign Up Here...</a>
-  </form>
-  </div>
-  </div>
+      <a href="register.php"><button class="btn btn-outline-dark" type="button"><b>Sign Up Here</b></button></a>
+    </form>
+
+  </main>
 
   <!-- Optional JavaScript -->
 
