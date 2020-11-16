@@ -40,7 +40,7 @@ if ($_GET['id']) {
 
         <title>Edit Meal</title>
 
-        <style type="text/css">
+        <!-- <style type="text/css">
             fieldset {
                 margin: auto;
                 margin-top: 100px;
@@ -49,7 +49,7 @@ if ($_GET['id']) {
 
             table tr th {
                 padding-top: 20px;
-            }
+            } -->
         </style>
 
     </head>

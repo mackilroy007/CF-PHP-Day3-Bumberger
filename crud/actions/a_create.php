@@ -38,7 +38,7 @@ if ($_POST) {
             </div>
         ";
    } else  {
-       echo "<p class='text-center mt-5'>Error " . $sql . ' ' . $connect->connect_error .'</p>;
+       echo "<p class='text-center mt-5'>Error " . $sql . ' ' . $connect->connect_error .'</p>';
    }
 
    $connect->close();
