@@ -2,10 +2,7 @@
 
 require_once 'actions/db_connect.php';
 
-// if session is not admin it get redirected to the user page
-if (!isset($_SESSION["admin"])) {
-   header("Location: homeU.php");
-}
+
 
 if ($_GET['id']) {
    $id = $_GET['id'];
@@ -21,13 +18,12 @@ if ($_GET['id']) {
    session_start();
    require_once 'actions/db_connect.php';
 
-   // if session is not set this will redirect to login page
-   if (!isset($_SESSION['user'])) {
-      header("Location: ../index.php");
-      exit;
+   // if session is not admin it get redirected to the user page
+   if (!isset($_SESSION["admin"])) {
+      header("Location: homeU.php");
    }
    // select logged-in users details
-   $res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
+   $res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
    $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
    ?>
    <!DOCTYPE html>

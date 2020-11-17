@@ -8,7 +8,7 @@ if (!isset($_SESSION["admin"])) {
     header("Location: homeU.php");
 }
 // select logged-in users details
-$res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
+$res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 ?>
 
