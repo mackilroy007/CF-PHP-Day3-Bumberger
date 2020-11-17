@@ -49,10 +49,6 @@ if (isset($_POST['btn-login'])) {
 
     if ($count == 1 && $row['userPass'] == $password) {
       
-      // if($row['state'] == 'admin'){
-      //   echo 'ok';
-      // }
-      // admin page
       if ($row["state"] == "user") {
 
         $_SESSION["user"] = $row["userId"];

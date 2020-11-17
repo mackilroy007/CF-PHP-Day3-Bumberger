@@ -16,6 +16,7 @@ if(isset($_SESSION['user'])){
 }
 
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+// var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +56,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
                 echo"<a href='home.php'><button class='btn btn-warning' type='button'>Go to Admin page</button></a>";
             }
                 ?>
+            <!-- end of admin button -->
         </form>
         <form class="form-inline">
             <a class="navbar-brand" href="#">Welcome - <?php echo $userRow['userName']; ?></a>

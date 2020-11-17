@@ -1,6 +1,14 @@
 <?php
 
 require_once 'actions/db_connect.php';
+ob_start();
+session_start();
+require_once 'actions/db_connect.php';
+
+// if session is not admin it get redirected to the user page
+if (!isset($_SESSION["admin"])) {
+    header("Location: homeU.php");
+}
 
 if ($_GET['id']) {
     $id = $_GET['id'];
@@ -14,14 +22,7 @@ if ($_GET['id']) {
 
 ?>
     <?php
-    ob_start();
-    session_start();
-    require_once 'actions/db_connect.php';
 
-    // if session is not admin it get redirected to the user page
-    if (!isset($_SESSION["admin"])) {
-        header("Location: homeU.php");
-    }
     // select logged-in users details
     $res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
     $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
@@ -38,17 +39,6 @@ if ($_GET['id']) {
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <title>Edit Meal</title>
-
-        <!-- <style type="text/css">
-            fieldset {
-                margin: auto;
-                margin-top: 100px;
-                width: 50%;
-            }
-
-            table tr th {
-                padding-top: 20px;
-            } -->
         </style>
 
     </head>
