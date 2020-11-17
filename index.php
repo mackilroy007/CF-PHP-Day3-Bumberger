@@ -68,8 +68,8 @@ if (isset($_POST['btn-login'])) {
     }
   }
 }
-echo $_SESSION['user'];
-echo $_SESSION['admin'];
+// echo $_SESSION['user'];
+// echo $_SESSION['admin'];
 ?>
 <!DOCTYPE html>
 <html>

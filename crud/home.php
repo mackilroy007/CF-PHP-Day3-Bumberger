@@ -54,6 +54,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <form class="form-inline">
             <a class="navbar-brand" href="home.php">Home</a>
             <a href="create.php"><button class="btn btn-warning" type="button">Add Meal</button></a>
+            <a href="homeU.php"><button class="btn btn-primary  ml-2" type="button">User Preview Site</button></a>
         </form>
         <form class="form-inline">
             <a class="navbar-brand" href="#">Welcome - <?php echo $userRow['userName']; ?></a>

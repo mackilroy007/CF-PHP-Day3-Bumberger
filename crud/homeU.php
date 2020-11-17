@@ -8,12 +8,14 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
     header("Location: ../index.php");
     exit;
 }
-// select logged-in users details
-$res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
-$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+// select logged-in users details (user or admin)
+if(isset($_SESSION['user'])){
+    $res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
+} else{
+   $res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
+}
 
-// $userType = mysqli_query($connect, "SELECT * FROM users WHERE state = 'admin'");
-var_dump($_SESSION);
+$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
