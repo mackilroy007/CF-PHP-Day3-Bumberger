@@ -1,9 +1,13 @@
 <?php
 ob_start();
 session_start(); // start a new session or continues the previous
+if (isset($_SESSION['admin'])!=""){
+   header("Location: home.php");
+   exit;
+}
 if (isset($_SESSION['user']) != "") {
-
-   header("Location: crud/home.php"); // redirects to home.php
+   header("Location: crud/homeU.php"); // redirects to homeU.php user site
+   exit;
 }
 include_once 'crud/actions/db_connect.php';
 $error = false;
@@ -73,13 +77,13 @@ if (isset($_POST['btn-signup'])) {
 
       if ($res) {
          $errTyp = "success";
-         $errMSG = "Successfully registered, you may login now";
+         $errMSG = "<h3 class='text-center'>Successfully registered, you may login now</h3>";
          unset($name);
          unset($email);
          unset($pass);
       } else {
          $errTyp = "danger";
-         $errMSG = "Something went wrong, try again later...";
+         $errMSG = "<h3 class='text-center'>Something went wrong, try again later</h3>";
       }
    }
 }

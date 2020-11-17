@@ -2,6 +2,11 @@
 
 require_once 'actions/db_connect.php';
 
+// if session is not admin it get redirected to the user page
+if (!isset($_SESSION["admin"])) {
+   header("Location: homeU.php");
+}
+
 if ($_GET['id']) {
    $id = $_GET['id'];
 

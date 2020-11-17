@@ -3,10 +3,9 @@ ob_start();
 session_start();
 require_once 'actions/db_connect.php';
 
-// if session is not set this will redirect to login page
-if (!isset($_SESSION['user'])) {
-    header("Location: ../index.php");
-    exit;
+// if session is not admin it get redirected to the user page
+if (!isset($_SESSION["admin"])) {
+    header("Location: homeU.php");
 }
 // select logged-in users details
 $res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
@@ -52,10 +51,10 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 <body>
 
     <nav class="navbar sticky-top fixed navbar-light bg-light">
-    <form class="form-inline">
-        <a class="navbar-brand" href="home.php">Home</a>
-        <a href="create.php"><button class="btn btn-warning" type="button">Add Meal</button></a>
-    </form>  
+        <form class="form-inline">
+            <a class="navbar-brand" href="home.php">Home</a>
+            <a href="create.php"><button class="btn btn-warning" type="button">Add Meal</button></a>
+        </form>
         <form class="form-inline">
             <a class="navbar-brand" href="#">Welcome - <?php echo $userRow['userName']; ?></a>
             <a href="../logout.php?logout"><button class="btn btn-outline-primary" type="button">Sign Out</button></a>

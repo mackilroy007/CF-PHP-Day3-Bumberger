@@ -1,16 +1,18 @@
 <?php
-include "actions/db_connect.php";
-?>
-<?php
 ob_start();
 session_start();
 require_once 'actions/db_connect.php';
 
 // if session is not set this will redirect to login page
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
     header("Location: ../index.php");
     exit;
 }
+if (isset($_SESSION["user"])) {
+    header("Location: homeU.php");
+    exit;
+}
+
 // select logged-in users details
 $res = mysqli_query($connect, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);

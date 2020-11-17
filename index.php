@@ -43,20 +43,33 @@ if (isset($_POST['btn-login'])) {
 
     $password = hash('sha256', $pass); // password hashing
 
-    $res = mysqli_query($connect, "SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
+    $res = mysqli_query($connect, "SELECT * FROM users WHERE userEmail='$email'");
     $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     $count = mysqli_num_rows($res); // if uname/pass is correct it returns must be 1 row
 
     if ($count == 1 && $row['userPass'] == $password) {
-      $_SESSION['user'] = $row['userId'];
-      #change
-      header("Location: crud/home.php");
-      #change
+      
+      // if($row['state'] == 'admin'){
+      //   echo 'ok';
+      // }
+      // admin page
+      if ($row["state"] == "user") {
+
+        $_SESSION["user"] = $row["userId"];
+        header("Location: crud/homeU.php");
+
+      } else if ($row["state"] == "admin") {
+
+        $_SESSION["admin"] = $row["userId"];
+        header("Location: crud/home.php");
+      }
     } else {
       $errMSG = "<h4 class='text-center'>Incorrect Credentials, Try again</h4>";
     }
   }
 }
+echo $_SESSION['user'];
+echo $_SESSION['admin'];
 ?>
 <!DOCTYPE html>
 <html>

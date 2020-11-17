@@ -2,6 +2,16 @@
 
 require_once 'actions/db_connect.php';
 
+// if session is not set this will redirect to login page
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
+    header("Location: ../index.php");
+    exit;
+}
+if (isset($_SESSION["user"])) {
+    header("Location: home.php");
+    exit;
+}
+
 if ($_GET['id']) {
     $id = $_GET['id'];
 
